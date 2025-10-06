@@ -169,3 +169,15 @@ print(type(zbior))  # <class 'set'>
 pusty_zbior = set()
 pusty_zbior.add(15)
 print(pusty_zbior)  # {15}
+
+# słownik - klucz - wartość
+slownik = {'name': "Radek", 'ag': 56}
+print(slownik)  # {'name': 'Radek', 'ag': 56}
+print(type(slownik))  # <class 'dict'>
+
+print(slownik.keys())
+print(slownik.values())
+print(slownik.items())
+# dict_keys(['name', 'ag'])
+# dict_values(['Radek', 56])
+# dict_items([('name', 'Radek'), ('ag', 56)])
