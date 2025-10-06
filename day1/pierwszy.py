@@ -74,6 +74,53 @@ print(tekst)  # Witaj Świecie
 """ Return a copy of the string converted to uppercase. """
 print(tekst.upper())  # WITAJ ŚWIECIE
 nowy_tekst = tekst.upper()
-print(nowy_tekst) # WITAJ ŚWIECIE
+print(nowy_tekst)  # WITAJ ŚWIECIE
 
+zmienna1 = "GROSS"
+zmienna2 = "groẞ"
 
+print(zmienna1.lower() == zmienna2.lower())  # , == porównanie, False - fałsz
+print(zmienna1.casefold() == zmienna2.casefold())  # True
+
+# typ logiczny, True, False
+print(1 != 0)  # różne, True
+
+name = "Radek"
+# f - f-string, string sformatowany
+print(f"Nazywam się: {name}")  # Nazywam się: Radek
+
+a = 4.567
+print(f"Liczba {a}")  # Liczba 4.567
+# ctrl d - powielanie linii
+print(f"Liczba {a:.2f}")  # Liczba 4.57
+
+print("Liczba:", a)  # Liczba: 4.567
+
+# f - float
+print("Liczba: %f" % a)  # Liczba: 4.567000
+print("Liczba: %.2f" % a)  # Liczba: 4.57
+# print("Liczba: %f" % "Radek")  # TypeError: must be real number, not str
+
+print("""
+Tekst
+    wielolinijkowe""")
+
+# "Tekst
+#     wielolinijkowe"
+
+"""Komentarz
+wielolinijkowy - dokumentacja"""
+
+print(100 / 3)  # 33.333333333333336
+print(100 // 3)  # 33, cześć całkowita z dzielenia
+print(100 % 3)  # 1, modulo, reszta z dzielenia
+print(10 % 3)  # reszta 1
+
+zysk = 890123456987
+print(f"Nasza duża liczba: {zysk:,}")  # Nasza duża liczba: 890,123,456,987
+print(f"Nasza duża liczba: {zysk:_}")  # Nasza duża liczba: 890_123_456_987
+print(f"Nasza duża liczba: {zysk:_}".replace("_", "."))  # Nasza duża liczba: 890.123.456.987
+
+liczba = 150_000_000_000
+print(liczba)  # 150000000000
+print(type(liczba))  # <class 'int'>
