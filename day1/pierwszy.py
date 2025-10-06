@@ -124,3 +124,48 @@ print(f"Nasza duża liczba: {zysk:_}".replace("_", "."))  # Nasza duża liczba: 
 liczba = 150_000_000_000
 print(liczba)  # 150000000000
 print(type(liczba))  # <class 'int'>
+
+# kolekcje
+# lista - przechowuje elementy z zachowaniem kolejności
+lista = [1, 2, 3, 5, 6, "Radek"]
+print(type(lista))  # <class 'list'>
+print(lista)  # [1, 2, 3, 5, 6, 'Radek']
+
+lista = []  # pusta lista
+lista.append("Radek")  # dodanie elementów do listy
+lista.append("Tomek")
+lista.append("Zenek")
+lista.append("Klaudia")
+lista.append("Maciej")
+print(lista)  # ['Radek', 'Tomek', 'Zenek', 'Klaudia', 'Maciej']
+
+# usunięcie
+lista.remove("Radek")
+print(lista)  # ['Tomek', 'Zenek', 'Klaudia', 'Maciej']
+
+lista_copy = lista.copy()
+lista_k = lista  # kopia adresu, referencji
+print(lista_k)  # ['Tomek', 'Zenek', 'Klaudia', 'Maciej']
+print(lista)  # ['Tomek', 'Zenek', 'Klaudia', 'Maciej']
+lista.clear()  # usunięcie wszystkich elementów z listy
+print(lista_k)  # []
+print(lista)  # []
+print(lista_copy)  # ['Tomek', 'Zenek', 'Klaudia', 'Maciej']
+
+# krotka (tupla) - kolekcja niemutowalna, do odczytu
+# pozwala lepiej zarządzać pamiecią
+krotka = tuple(lista_copy)
+print(type(krotka))  # <class 'tuple'>
+print(krotka)  # ('Tomek', 'Zenek', 'Klaudia', 'Maciej')
+tupla1 = "Radek", "Tomek"
+print(type(tupla1))  # <class 'tuple'>
+
+# zbiór - set
+# przechowuje unikalne elementy, nie zachowuje kolejności
+lista = [2, 5, 6, 8, 6, 7, 8, 5, 9]
+zbior = set(lista)
+print(zbior)  # {2, 5, 6, 7, 8, 9}
+print(type(zbior))  # <class 'set'>
+pusty_zbior = set()
+pusty_zbior.add(15)
+print(pusty_zbior)  # {15}
