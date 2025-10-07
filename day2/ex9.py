@@ -2,6 +2,7 @@ import openpyxl
 
 from openpyxl.styles import Font, colors, PatternFill, Border, Side
 from openpyxl.formatting.rule import CellIsRule
+from openpyxl.styles.fills import FILL_PATTERN_DARKUP
 
 # wb = openpyxl.load_workbook('video2.xlsx')
 wb = openpyxl.load_workbook('video3.xlsx')
@@ -50,5 +51,35 @@ ws['A1'].border = Border(
     top=my_border, left=my_border, right=my_border, bottom=my_border
 )
 
+# formatowanie warunkowe - oznaczenie komórek spełniających warunek
+fill = PatternFill(
+    start_color='90EE90',
+    end_color="90EE90",
+    fill_type='solid'
+)
+
+# ">": "greaterThan", ">=": "greaterThanOrEqual", "<": "lessThan", "<=": "lessThanOrEqual",
+#               "=": "equal", "==": "equal", "!=": "notEqual"
+ws.conditional_formatting.add(
+    'G2:K16328',
+    CellIsRule(operator='lessThan',
+               formula=[5],
+               fill=fill,
+               font=Font(color="FF00FF"))
+)
+
+fill_gt = PatternFill(
+    start_color='30EE30',
+    end_color='30FF00',
+    fill_type=FILL_PATTERN_DARKUP
+)
+
+ws.conditional_formatting.add(
+    'G2:K16328',
+    CellIsRule(operator='greaterThan',
+               formula=[8],
+               fill=fill_gt,
+               font=Font(color='FF00FF'))
+)
 wb.save('video3.xlsx')
 wb.close()
