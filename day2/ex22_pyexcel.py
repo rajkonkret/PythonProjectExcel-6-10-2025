@@ -10,3 +10,14 @@ data = [
 
 sheet = pyexcel.Sheet(data)
 sheet.save_as('wyniki.xlsx')
+
+sheet = pyexcel.get_sheet(file_name='wyniki.xlsx')
+print(sheet)
+# pyexcel sheet:
+# +-------+------+
+# | Imię  | Wiek |
+# +-------+------+
+# | Tomek | 38   |
+# +-------+------+
+# | Kasia | 38   |
+# +-------+------+
