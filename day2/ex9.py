@@ -18,8 +18,8 @@ ws['A1'].font = Font(color='FF0000', bold=True, size=12)  # czerwony
 ws['A2'].font = Font(color='0000FF')  # niebieski
 # https://www.bing.com/search?q=color+codes+from+hex&cvid=f3aba924c36142478c9ea44805fec83a&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBwgGEOsHGEDSAQg3MzgyajBqNKgCCLACAQ&FORM=ANAB01&PC=U531
 
-# ws['A1'].fill = PatternFill('lightVertical', start_color='38e3ff')
-ws['A1'].fill = PatternFill('darkTrellis', start_color='1188A7')
+ws['A1'].fill = PatternFill('lightVertical', start_color='38e3ff')
+# ws['A1'].fill = PatternFill('darkTrellis', start_color='1188A7')
 # FILL_NONE = 'none'
 # FILL_SOLID = 'solid'
 # FILL_PATTERN_DARKDOWN = 'darkDown'
@@ -40,6 +40,15 @@ ws['A1'].fill = PatternFill('darkTrellis', start_color='1188A7')
 # FILL_PATTERN_LIGHTVERTICAL = 'lightVertical'
 # FILL_PATTERN_MEDIUMGRAY = 'mediumGray'
 
+# ramka
+# 'dashDot','dashDotDot', 'dashed','dotted',
+#                             'double','hair', 'medium', 'mediumDashDot', 'mediumDashDotDot',
+#                             'mediumDashed', 'slantDashDot', 'thick', 'thin'
+# my_border = Side(border_style='thin', color='000000')  # czarny
+my_border = Side(border_style='thick', color='000000')  # czarny
+ws['A1'].border = Border(
+    top=my_border, left=my_border, right=my_border, bottom=my_border
+)
 
 wb.save('video3.xlsx')
 wb.close()
