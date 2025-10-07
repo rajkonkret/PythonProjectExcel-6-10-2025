@@ -20,3 +20,16 @@ with pd.ExcelWriter("Tabela.xlsx", engine='xlsxwriter') as writer:
         'bg_color': '#D7E4BC',
         'border': 1
     })
+
+    # enumerate() - numeruje kolekcja
+    for col_num, value in enumerate(df.columns.values):
+        worksheet.write(0, col_num, value, header_format)
+
+    (max_row, max_col) = df.shape  # odczyt kształtu tablicy
+    # chr() - znak o wskazanym kodzie
+    cell_range = f'A1:{chr(65 + max_col - 1)}{max_row + 1}'
+
+    worksheet.add_table(cell_range, {
+        'name': "TabelaOsoby",
+        "columns": [{"header": col} for col in df.columns]
+    })
