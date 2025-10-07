@@ -36,3 +36,21 @@ ws['U2'] = '=CEILING(T2, 25)'
 
 wb.save('video2.xlsx')
 wb.close()
+
+ws['V1'] = "Rounded sum of Sports Sales"
+ws['V2'] = '=CEILING(T2, 1)'
+
+wb.save('video2.xlsx')
+wb.close()
+
+ws['W1'] = "Rounded"
+ws['W2'] = '=ROUND(T2, 0)'
+
+wb.save('video2.xlsx')
+wb.close()
+
+ws['X1'] = 'Floor'
+ws['X2'] = '=FLOOR(T2, 25)'
+
+wb.save('video2.xlsx')
+wb.close()
